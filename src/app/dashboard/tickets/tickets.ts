@@ -1,8 +1,13 @@
 import { Component } from '@angular/core'
 
+import { DashboardItem } from '../dashboard-item/dashboard-item'
+
 @Component({
   selector: 'app-tickets',
-  imports: [],
+  imports: [DashboardItem],
   templateUrl: './tickets.html',
 })
-export class Tickets {}
+export class Tickets {
+  img = { src: 'list.png', alt: 'A list of items' }
+  title = 'Support Tickets'
+}
