@@ -1,6 +1,6 @@
 import { Component, input } from '@angular/core'
 
-import { Img } from './dashboard-item.model'
+import { Image } from './dashboard-item.model'
 
 @Component({
   selector: 'app-dashboard-item',
@@ -8,6 +8,6 @@ import { Img } from './dashboard-item.model'
   templateUrl: './dashboard-item.html',
 })
 export class DashboardItem {
-  img = input.required<Img>()
+  image = input.required<Image>()
   title = input.required<string>()
 }

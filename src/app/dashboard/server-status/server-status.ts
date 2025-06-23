@@ -9,6 +9,6 @@ import { DashboardItem } from '../dashboard-item/dashboard-item'
 })
 export class ServerStatus {
   currentStatus = 'online'
-  img = { src: 'status.png', alt: 'A signal symbol' }
+  image = { src: 'status.png', alt: 'A signal symbol' }
   title = 'Server Status'
 }

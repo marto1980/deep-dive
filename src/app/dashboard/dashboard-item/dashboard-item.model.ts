@@ -1,6 +1,6 @@
-type Img = {
+type Image = {
   src: string
   alt: string
 }
 
-export type { Img }
+export type { Image }

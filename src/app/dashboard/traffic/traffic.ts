@@ -39,6 +39,6 @@ export class Traffic {
     },
   ]
   maxTraffic = Math.max(...this.dummyTrafficData.map((data) => data.value))
-  img = { src: 'globe.png', alt: 'A globe' }
+  image = { src: 'globe.png', alt: 'A globe' }
   title = 'Traffic'
 }

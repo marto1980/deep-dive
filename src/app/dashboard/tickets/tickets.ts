@@ -8,6 +8,6 @@ import { DashboardItem } from '../dashboard-item/dashboard-item'
   templateUrl: './tickets.html',
 })
 export class Tickets {
-  img = { src: 'list.png', alt: 'A list of items' }
+  image = { src: 'list.png', alt: 'A list of items' }
   title = 'Support Tickets'
 }
