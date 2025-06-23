@@ -1,10 +1,7 @@
 import { Component } from '@angular/core'
 
-import { DashboardItem } from '../dashboard-item/dashboard-item'
-
 @Component({
   selector: 'app-traffic',
-  imports: [DashboardItem],
   templateUrl: './traffic.html',
 })
 export class Traffic {
@@ -39,6 +36,4 @@ export class Traffic {
     },
   ]
   maxTraffic = Math.max(...this.dummyTrafficData.map((data) => data.value))
-  image = { src: 'globe.png', alt: 'A globe' }
-  title = 'Traffic'
 }
