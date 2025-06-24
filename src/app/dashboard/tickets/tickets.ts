@@ -1,8 +1,11 @@
 import { Component } from '@angular/core'
 
+import { NewTicket } from './new-ticket/new-ticket'
+
 @Component({
   selector: 'app-tickets',
   templateUrl: './tickets.html',
+  imports: [NewTicket],
 })
 export class Tickets {
   image = { src: 'list.png', alt: 'A list of items' }

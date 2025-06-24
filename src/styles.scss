@@ -1,13 +1,11 @@
-/* You can add global styles to this file, and also import other style files */
-
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+@import 'https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap';
 
 * {
   box-sizing: border-box;
 }
 
 html {
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 body {
@@ -36,13 +34,19 @@ header {
   background-color: #eee8f2;
   padding: 1.25rem;
   border-radius: 50%;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 0 8px rgb(0, 0, 0, 35%);
+}
+
+.dashboard-item header img {
+  width: 1.5rem;
+  height: 1.5rem;
+  object-fit: contain;
 }
 
 #logo img {
   width: 100%;
   height: 100%;
-  filter: drop-shadow(0 0 4px rgba(29, 29, 29, 0.35));
+  filter: drop-shadow(0 0 4px rgb(29, 29, 29, 35%));
 }
 
 nav ul {
@@ -64,7 +68,7 @@ nav ul li a:hover {
   color: #77207a;
 }
 
-@media (min-width: 768px) {
+@media (width >= 768px) {
   header {
     font-size: 1.25rem;
     flex-direction: row;
@@ -82,7 +86,7 @@ nav ul li a:hover {
   max-width: 85rem;
 }
 
-@media (min-width: 768px) {
+@media (width >= 768px) {
   #dashboard {
     flex-direction: row;
   }
@@ -94,7 +98,7 @@ nav ul li a:hover {
 }
 
 p {
-  margin: 0 0 1rem 0;
+  margin: 0 0 1rem;
   font-size: 0.9rem;
   color: #4f4b53;
 }
@@ -115,7 +119,7 @@ p {
   border-top-right-radius: 4px;
 }
 
-@media (min-width: 768px) {
+@media (width >= 768px) {
   #traffic {
     width: 20rem;
   }
@@ -126,10 +130,15 @@ p {
   width: 15rem;
 }
 
+p:last-of-type {
+  margin: 0;
+  color: #625e67;
+}
+
 .status p:first-of-type {
   font-weight: bold;
   animation: pulse 2s infinite;
-  margin: 0 0 0.5rem 0;
+  margin: 0 0 0.5rem;
   font-size: 1.15rem;
 }
 
@@ -145,18 +154,15 @@ p {
   color: grey;
 }
 
-p:last-of-type {
-  margin: 0;
-  color: #625e67;
-}
-
 @keyframes pulse {
   0% {
     opacity: 1;
   }
+
   50% {
     opacity: 0.5;
   }
+
   100% {
     opacity: 1;
   }
@@ -168,7 +174,7 @@ p:last-of-type {
   border: 1px solid #ccc;
   border-radius: 6px;
   background-color: #f8f8f8;
-  box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 6px 0 rgb(0, 0, 0, 20%);
 }
 
 .dashboard-item header {
@@ -179,12 +185,6 @@ p:last-of-type {
   margin-bottom: 1rem;
 }
 
-.dashboard-item header img {
-  width: 1.5rem;
-  height: 1.5rem;
-  object-fit: contain;
-}
-
 h2 {
   margin: 0;
   font-size: 0.9rem;
@@ -192,7 +192,7 @@ h2 {
   color: #504e50;
 }
 
-@media (min-width: 768px) {
+@media (width >= 768px) {
   .dashboard-item {
     padding: 2rem;
   }
@@ -222,4 +222,61 @@ button:hover {
 
 button:hover .icon {
   transform: translateX(4px);
+}
+
+#tickets {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+#tickets ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 15rem;
+}
+
+#tickets li {
+  margin: 0.5rem 0;
+}
+
+#tickets p {
+  margin: 0;
+  color: #4f4b53;
+}
+
+#tickets h2 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #38343c;
+}
+
+#new-ticket {
+  width: 15rem;
+}
+
+@media (width >= 768px) {
+  #tickets {
+    flex-direction: row;
+  }
+}
+
+#new-ticket label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: bold;
+  margin-bottom: 0.15rem;
+  color: #4f4b53;
+}
+
+#new-ticket input,
+#new-ticket textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font: inherit;
+  font-size: 0.9rem;
+  color: #4f4b53;
 }
