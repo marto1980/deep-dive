@@ -47,8 +47,8 @@ export default tseslint.config(
     },
     extends: [
       eslint.configs.recommended, // Apply the recommended eslint core rules
-      tseslint.configs.strictTypeChecked,
-      tseslint.configs.stylisticTypeChecked,
+      ...tseslint.configs.strictTypeChecked,
+      ...tseslint.configs.stylisticTypeChecked,
       functional.configs.externalTypeScriptRecommended,
       functional.configs.recommended,
       functional.configs.stylistic,
@@ -74,7 +74,7 @@ export default tseslint.config(
       '@angular-eslint/component-selector': [
         'error',
         {
-          type: 'element',
+          type: ['attribute', 'element'],
           prefix: 'app',
           style: 'kebab-case',
         },
