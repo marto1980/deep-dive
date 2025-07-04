@@ -1,10 +1,11 @@
 import { Component } from '@angular/core'
 
 import { Button } from '../../../shared/button/button'
+import { Control } from '../../../shared/control/control'
 
 @Component({
   selector: 'app-new-ticket',
-  imports: [Button],
+  imports: [Button, Control],
   templateUrl: './new-ticket.html',
 })
 export class NewTicket {}
