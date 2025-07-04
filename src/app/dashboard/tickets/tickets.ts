@@ -6,6 +6,7 @@ import { NewTicket } from './new-ticket/new-ticket'
   selector: 'app-tickets',
   templateUrl: './tickets.html',
   imports: [NewTicket],
+  styleUrl: './tickets.scss',
 })
 export class Tickets {
   image = { src: 'list.png', alt: 'A list of items' }

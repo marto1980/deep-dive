@@ -3,6 +3,7 @@ import { Component } from '@angular/core'
 @Component({
   selector: 'app-traffic',
   templateUrl: './traffic.html',
+  styleUrl: './traffic.scss',
 })
 export class Traffic {
   dummyTrafficData = [

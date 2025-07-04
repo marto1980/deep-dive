@@ -6,6 +6,7 @@ import { Image } from './dashboard-item.model'
   selector: 'app-dashboard-item',
   imports: [],
   templateUrl: './dashboard-item.html',
+  styleUrl: './dashboard-item.scss',
 })
 export class DashboardItem {
   image = input.required<Image>()

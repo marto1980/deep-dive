@@ -6,5 +6,6 @@ import { Button } from '../shared/button/button'
   selector: 'app-header',
   imports: [Button],
   templateUrl: './header.html',
+  styleUrl: './header.scss',
 })
 export class Header {}

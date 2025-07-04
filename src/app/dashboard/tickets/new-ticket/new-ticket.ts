@@ -7,5 +7,6 @@ import { Control } from '../../../shared/control/control'
   selector: 'app-new-ticket',
   imports: [Button, Control],
   templateUrl: './new-ticket.html',
+  styleUrl: './new-ticket.scss',
 })
 export class NewTicket {}
