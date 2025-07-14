@@ -1,5 +1,6 @@
 import { isPlatformBrowser } from '@angular/common'
 import {
+  AfterViewInit,
   Component,
   inject,
   OnDestroy,
@@ -12,14 +13,15 @@ import {
   templateUrl: './server-status.html',
   styleUrl: './server-status.scss',
 })
-export class ServerStatus implements OnInit, OnDestroy {
+export class ServerStatus implements OnInit, OnDestroy, AfterViewInit {
   currentStatus: 'online' | 'offline' | 'unknown' = 'offline'
-  private intervalId?: ReturnType<typeof setInterval>
+  private interval?: NodeJS.Timeout
   private readonly platformId = inject(PLATFORM_ID)
 
   ngOnInit() {
+    console.log('ON INIT')
     if (isPlatformBrowser(this.platformId)) {
-      this.intervalId = setInterval(() => {
+      this.interval = setInterval(() => {
         // eslint-disable-next-line sonarjs/pseudo-random
         const rnd = Math.random()
         if (rnd < 0.5) {
@@ -33,9 +35,13 @@ export class ServerStatus implements OnInit, OnDestroy {
     }
   }
 
+  ngAfterViewInit() {
+    console.log('AFTER VIEW INIT')
+  }
+
   ngOnDestroy() {
-    if (this.intervalId) {
-      clearInterval(this.intervalId)
+    if (this.interval) {
+      clearInterval(this.interval)
     }
   }
 }
