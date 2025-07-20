@@ -1,6 +1,6 @@
 import {
   Component,
-  ContentChild,
+  contentChild,
   ElementRef,
   inject,
   input,
@@ -16,14 +16,13 @@ import {
   host: { class: 'control', '(click)': 'onClick()' },
 })
 export class Control {
-  @ContentChild('input') private readonly control?: ElementRef<
-    HTMLInputElement | HTMLTextAreaElement
-  >
+  private readonly control =
+    contentChild<ElementRef<HTMLInputElement | HTMLTextAreaElement>>('input')
   label = input.required<string>()
   el = inject(ElementRef)
   onClick() {
     console.log('Control clicked')
     console.log(this.el)
-    console.log(this.control)
+    console.log(this.control())
   }
 }
