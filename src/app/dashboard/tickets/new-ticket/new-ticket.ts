@@ -11,10 +11,8 @@ import { Control } from '../../../shared/control/control'
   styleUrl: './new-ticket.scss',
 })
 export class NewTicket {
-  onSubmit(inputElement: Readonly<HTMLInputElement>) {
-    console.log('FORM SUBMITTED!')
-    console.log('input element', inputElement)
-    console.dir(inputElement)
-    console.log('Entered title:', inputElement.value)
+  onSubmit(title: string, ticketText: string) {
+    console.log('title', title)
+    console.log('ticketText', ticketText)
   }
 }
