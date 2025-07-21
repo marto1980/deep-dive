@@ -1,4 +1,6 @@
 import {
+  afterEveryRender,
+  afterNextRender,
   Component,
   contentChild,
   ElementRef,
@@ -20,6 +22,16 @@ export class Control {
     contentChild<ElementRef<HTMLInputElement | HTMLTextAreaElement>>('input')
   label = input.required<string>()
   el = inject(ElementRef)
+  constructor() {
+    afterEveryRender(() => {
+      console.log('afterEveryRender')
+    })
+
+    afterNextRender(() => {
+      console.log('afterNextRender')
+    })
+  }
+
   onClick() {
     console.log('Control clicked')
     console.log(this.el)
