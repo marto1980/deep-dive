@@ -3,9 +3,11 @@ import {
   AfterViewInit,
   Component,
   DestroyRef,
+  effect,
   inject,
   OnInit,
   PLATFORM_ID,
+  signal,
 } from '@angular/core'
 
 @Component({
@@ -14,10 +16,15 @@ import {
   styleUrl: './server-status.scss',
 })
 export class ServerStatus implements OnInit, AfterViewInit {
-  currentStatus: 'online' | 'offline' | 'unknown' = 'offline'
+  currentStatus = signal<'online' | 'offline' | 'unknown'>('offline')
   private readonly platformId = inject(PLATFORM_ID)
   private readonly destroyRef = inject(DestroyRef)
 
+  constructor() {
+    effect(() => {
+      console.log('currentStatus', this.currentStatus())
+    })
+  }
   ngOnInit() {
     console.log('ON INIT')
     if (isPlatformBrowser(this.platformId)) {
@@ -25,11 +32,11 @@ export class ServerStatus implements OnInit, AfterViewInit {
         // eslint-disable-next-line sonarjs/pseudo-random
         const rnd = Math.random()
         if (rnd < 0.5) {
-          this.currentStatus = 'online'
+          this.currentStatus.set('online')
         } else if (rnd < 0.9) {
-          this.currentStatus = 'offline'
+          this.currentStatus.set('offline')
         } else {
-          this.currentStatus = 'unknown'
+          this.currentStatus.set('unknown')
         }
       }, 5000)
       this.destroyRef.onDestroy(() => {
