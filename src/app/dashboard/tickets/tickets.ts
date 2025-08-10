@@ -25,4 +25,10 @@ export class Tickets {
 
     this.tickets = [...this.tickets, newTicket]
   }
+
+  onClose(id: string) {
+    this.tickets = this.tickets.map((ticket: Readonly<TicketModel>) =>
+      id === ticket.id ? { ...ticket, status: 'closed' } : ticket,
+    )
+  }
 }

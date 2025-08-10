@@ -1,4 +1,4 @@
-type TicketStatus = 'open' | 'close'
+type TicketStatus = 'open' | 'closed'
 
 type TicketModel = {
   id: string
