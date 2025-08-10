@@ -25,9 +25,9 @@
     "@angular/router": "^20",
     "@angular/ssr": "^20",
     "express": "^5",
-    "rxjs": "~7.8.0",
+    "rxjs": "~7.8",
     "tslib": "^2",
-    "zone.js": "~0.15.0"
+    "zone.js": "~0.15"
   },
   "devDependencies": {
     "@angular/build": "^20",
@@ -39,8 +39,8 @@
     "@types/eslint-plugin-jsx-a11y": "^6",
     "@types/eslint-plugin-security": "^3",
     "@types/express": "^5",
-    "@types/jasmine": "~5.1.0",
-    "@types/node": "^20.17.19",
+    "@types/jasmine": "~5.1",
+    "@types/node": "^24",
     "eslint": "^9",
     "eslint-config-prettier": "^10",
     "eslint-plugin-array-func": "^5",
@@ -53,22 +53,22 @@
     "eslint-plugin-rxjs-x": "^0",
     "eslint-plugin-security": "^3",
     "eslint-plugin-sonarjs": "^3",
-    "eslint-plugin-unicorn": "^59",
+    "eslint-plugin-unicorn": "^60",
     "husky": "^9",
-    "jasmine-core": "~5.7.0",
+    "jasmine-core": "~5.9",
     "jiti": "^2",
-    "karma": "~6.4.0",
-    "karma-chrome-launcher": "~3.2.0",
-    "karma-coverage": "~2.2.0",
-    "karma-jasmine": "~5.1.0",
-    "karma-jasmine-html-reporter": "~2.1.0",
+    "karma": "~6.4",
+    "karma-chrome-launcher": "~3.2",
+    "karma-coverage": "~2.2",
+    "karma-jasmine": "~5.1",
+    "karma-jasmine-html-reporter": "~2.1",
     "lint-staged": "^16",
     "prettier": "^3",
     "stylelint": "^16",
     "stylelint-config-standard-scss": "^15",
     "stylelint-prettier": "^5",
     "stylelint-scss": "^6",
-    "typescript": "~5.8.2"
+    "typescript": "~5.8"
   },
   "overrides": {
     "rollup": "npm:@rollup/wasm-node@latest"
