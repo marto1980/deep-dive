@@ -21,6 +21,8 @@ import { TicketData } from './new-ticket.model'
 export class NewTicket implements OnInit, AfterViewInit {
   @ViewChild('form') form?: ElementRef<HTMLFormElement>
   add = output<TicketData>()
+  enteredTitle = ''
+  enteredText = ''
   ngOnInit() {
     console.log('ON INIT')
     console.log(this.form?.nativeElement)
@@ -31,11 +33,15 @@ export class NewTicket implements OnInit, AfterViewInit {
     console.log(this.form?.nativeElement)
   }
 
-  onSubmit(title: string, ticketText: string) {
-    this.form?.nativeElement.reset()
-    const ticketData: TicketData = { title, request: ticketText }
+  onSubmit() {
+    const ticketData: TicketData = {
+      title: this.enteredTitle,
+      request: this.enteredText,
+    }
     this.add.emit(ticketData)
-    console.log('title', title)
-    console.log('ticketText', ticketText)
+    this.enteredTitle = ''
+    this.enteredText = ''
+    console.log('title', this.enteredTitle)
+    console.log('ticketText', this.enteredText)
   }
 }
